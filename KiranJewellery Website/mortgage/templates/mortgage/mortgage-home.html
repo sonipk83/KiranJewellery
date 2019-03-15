@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+{% block content %}
+   <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Item</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Principle</th>
+      <th scope="col">Rate</th>
+      <th scope="col">Interest</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for mortgage in mortgages %}
+         <tr class="table-active">
+      <th scope="row"><a class="article-title" href="{% url 'mortgage-detail' mortgage.id %}">{{ mortgage.id }}</a></th>
+      <td>{{ mortgage.date_of_transaction }}</td>
+      <td>{{ mortgage.name }}</td>
+      <td>{{ mortgage.address }}</td>
+      <td>{{ mortgage.item }}</td>
+      <td>{{ mortgage.weight }}</td>
+      <td>{{ mortgage.rate }}</td>
+      <td>{{ mortgage.principle }}</td>
+      <td>{{ mortgage.interest }}</td>
+      <td>{{ mortgage.amount }}</td>
+     <!-- <td><a href="<?php echo $this->url('chanki',['action' => 'view', 'id' => $post->getId()]);?>" class="label label-success">VIEW</a></td>
+      <td><a href="<?php echo $this->url('chanki',['action' => 'edit', 'id' => $post->getId()]);?>" class="label label-default">UPDATE</a></td>
+      <td><a href="<?php echo $this->url('chanki',['action' => 'delete', 'id' => $post->getId()]);?>" class="label label-danger">DELETE</a></td>-->
+    </tr>
+    {% endfor %}
+   </tbody>
+</table>
+{% endblock content %}

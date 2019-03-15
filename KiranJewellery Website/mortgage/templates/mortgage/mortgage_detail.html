@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+       <article class="media content-section">
+        <div class="media-body">
+            <table class="table table-hover">
+            <thead>
+             <tr class="table-active">
+              <th scope="row">{{ mortgage.id }}</th>
+              <td>{{ mortgage.date_of_transaction }}</td>
+              <td>{{ mortgage.name }}</td>
+              <td>{{ mortgage.address }}</td>
+              <td>{{ mortgage.item }}</td>
+              <td>{{ mortgage.weight }}</td>
+              <td>{{ mortgage.rate }}</td>
+              <td>{{ mortgage.principle }}</td>
+              <td>{{ mortgage.interest }}</td>
+              <td>{{ mortgage.amount }}</td>
+             </tr>
+            </thead>
+            </table>
+        </div>
+        </article>
+{% endblock content %}
